@@ -18,9 +18,9 @@ The goal with this repo is to have something similar to create-react-app that ca
 - [X] server
   - [X] split out API routes into a separate file
 - [ ] client
-  - [ ] include at least one react-router
-  - [ ] include at least one component
-  - [ ] include at least one scss
+  - [X] include at least one react-router
+  - [X] include at least one component
+  - [X] include at least one scss
   - [ ] include something that does something to the state with redux
 - [ ] webpack-dev-server set-up
   - [ ] basic serving / compiling
@@ -29,6 +29,8 @@ The goal with this repo is to have something similar to create-react-app that ca
   - [ ] hot loading
   - [ ] linting
 ### Enhancements
+- [ ] move all config files to separate directory
+- [ ] move all the dev dependencies to be just dev dependencies 
 - [ ] structure to handle development versus production cleanly
 - [ ] some basic passport set-up?
 - [ ] normalizr

@@ -14,6 +14,7 @@ mongoose.connect(process.env.MONGO_URI, (err) => {
 
 
 const app = express();
+
 var sessionOptions = {
   secret: process.env.SECRET || 'default0secret',
   resave: false,
@@ -26,16 +27,21 @@ if (process.env.ENV_TYPE === 'PRODUCTION') {
   sessionOptions.cookie = {secure: true};
   app.set('trust proxy', 1);
 }
-
-app.use(bodyParser.json());
 app.use(session(sessionOptions));
-app.get('/', (req, res) => {
-  res.send('this is a home page');
+app.use(bodyParser.json());
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
+app.use('/api', require('./src/server/ApiRoutes'));
+
+app.get('*', (req, res) => {
+  res.sendFile(
+    path.join(process.cwd(), 'public', 'index.html')
+  );
 });
 
-app.use('/api', require('./server/ApiRoutes'));
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log('listening on port ', port);  // eslint-disable-line
-})
+});
