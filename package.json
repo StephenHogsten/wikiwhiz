@@ -1,0 +1,9 @@
+{
+  "name": "Kettle",
+  "version": "1.0.0",
+  "description": "Custom MERN Boilerplate",
+  "main": "index.js",
+  "repository": "https://github.com/hogdogthegod/Kettle.git",
+  "author": "HogDogTheGod <throweymcthrowerson@gmail.com>",
+  "license": "MIT"
+}
