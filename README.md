@@ -17,13 +17,14 @@ The goal with this repo is to have something similar to create-react-app that ca
 - [X] list out a bunch of packages to install (install them later)
 - [X] server
   - [X] split out API routes into a separate file
-- [ ] client
+- [X] client
   - [X] include at least one react-router
   - [X] include at least one component
   - [X] include at least one scss
-  - [ ] include something that does something to the state with redux
+  - [X] include something that does something to the state with redux
 - [ ] webpack-dev-server set-up
-  - [ ] basic serving / compiling
+  - [X] basic serving / compiling
+  - [ ] watching
   - [ ] serve static files properly
   - [ ] compile scss
   - [ ] hot loading
