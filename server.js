@@ -29,16 +29,16 @@ if (process.env.ENV_TYPE === 'PRODUCTION') {
 }
 app.use(session(sessionOptions));
 app.use(bodyParser.json());
-app.use('/public', express.static(path.join(__dirname, 'public')));
+
+app.use('/public', express.static('public'));
 
 app.use('/api', require('./src/server/ApiRoutes'));
 
 app.get('*', (req, res) => {
   res.sendFile(
-    path.join(process.cwd(), 'public', 'index.html')
+    path.join(process.cwd(), 'public', 'generatedIndex.html')
   );
 });
-
 
 
 const port = process.env.PORT || 3000;

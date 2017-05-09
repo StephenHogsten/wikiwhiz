@@ -25,10 +25,12 @@ The goal with this repo is to have something similar to create-react-app that ca
 - [ ] webpack-dev-server set-up
   - [X] basic serving / compiling
   - [ ] watching
-  - [ ] serve static files properly
-  - [ ] compile scss
+  - [X] serve static files properly
+    - I believe the issue was the publicPath variable in output
+  - [X] compile scss
   - [ ] hot loading
-  - [ ] linting
+  - [ ] linting (https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
+  - [ ] CommonChunkPlugin - compile 3rd party code into its own file to speed up caching
 ### Enhancements
 - [ ] move all config files to separate directory
 - [ ] move all the dev dependencies to be just dev dependencies 
