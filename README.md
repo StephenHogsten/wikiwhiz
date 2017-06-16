@@ -25,6 +25,7 @@ The goal with this repo is to have something similar to create-react-app that ca
 - [ ] webpack-dev-server set-up
   - [X] basic serving / compiling
   - [ ] watching
+    - nodemon shouldn't watch client files
   - [X] serve static files properly
     - I believe the issue was the publicPath variable in output
   - [X] compile scss

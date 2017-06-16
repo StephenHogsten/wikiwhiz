@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import _ClickMe from '../containers/_ClickMe';
+import RandomArticle from './RandomArticle';
+import SearchBar from './SearchBar'
 import '../scss/App.scss';
 
 class App extends Component {
@@ -8,8 +10,10 @@ class App extends Component {
     return (
       <div className="App">
         This is your app!
+        <RandomArticle />
+        <SearchBar />
         <_ClickMe />
-        <Switch>
+        <Switch>  
           <Route exact path='/' render={() => (
             <p>You're on the home page!</p>
           )} />
