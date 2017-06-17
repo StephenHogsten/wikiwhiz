@@ -12,6 +12,11 @@ const SearchBar = (props) => (
       onClick={() => {
         props.onClickSearch(document.querySelector('#search-text').value)
       }}
+      onKeyDown={(event) => {
+        if (event.keyCode == 12) {
+          props.onClickSearch(document.querySelector('#search-text').value)
+        }
+      }}
     >Search</button>
   </div>
 );

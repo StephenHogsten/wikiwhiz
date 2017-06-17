@@ -33,21 +33,33 @@ function updateSearchArray(searchResults) {
   }
 }
 
-function clearSearchResults(value) {
+function clearSearchResults() {
   return {
     type: CLEAR_SEARCH_RESULTS
   }
 }
 
 export function newSearch(search_text) {
+  if (search_text == '') {
+    return (dispatch) => dispatch(clearSearchResults())
+  }
   return (dispatch) => {
     dispatch(updateSearchStatus(REQUESTED));
     return fetch('https://en.wikipedia.org/w/api.php?action=opensearch&search=' + search_text + '&limit=20&namespace=0&origin=*&format=json')
       .then(response => response.json())
       .then(json => {
-            dispatch(updateSearchArray(json[1]));
-            dispatch(updateSearchStatus(SUCCESS))
+        var l = json[1].length;
+        var wikiArr = Array(l).fill()
+        for (var i=0; i<json[1].length; i++) {
+          wikiArr[i] = {
+            title: json[1][i],
+            description: json[2][i],
+            link: json[3][i]
+          }
+        }
+        dispatch(updateSearchArray(wikiArr));
+        dispatch(updateSearchStatus(SUCCESS))
       })
-      .catch(err => dispatch(UPDATE_SEARCH_STATUS(FAILURE)))
+      .catch(err => dispatch(updateSearchStatus(FAILURE)))
   }
 }
