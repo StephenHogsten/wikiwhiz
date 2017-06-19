@@ -5,17 +5,20 @@ import {REQUESTED, newSearch} from '../actions';
 
 const SearchBar = (props) => (
   <div className='search-bar'>
-    <input id='search-text' />
+    <input 
+      id='search-text' 
+      placeholder='search terms'
+      onKeyDown={(event) => {
+        if (event.keyCode == 13) {
+          props.onClickSearch(event.target.value)
+        }
+      }}
+    />
     <button 
       type='button' 
       className={props.searchStatus==REQUESTED? 'search-btn-fetching': 'search-btn'}
       onClick={() => {
         props.onClickSearch(document.querySelector('#search-text').value)
-      }}
-      onKeyDown={(event) => {
-        if (event.keyCode == 12) {
-          props.onClickSearch(document.querySelector('#search-text').value)
-        }
       }}
     >Search</button>
   </div>

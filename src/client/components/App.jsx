@@ -12,8 +12,8 @@ class App extends Component {
       
       <Switch>  
         <Route exact path='/' render={() => (
-          <div className='App'>
-            <h1 className='header'>Welcome to your wiki browser</h1>
+          <div className='app'>
+            <h1 className='header'>Wikipedia Whiz</h1>
             <RandomArticle />
             <SearchBar />
             <SearchResults />
